@@ -6,6 +6,9 @@ import time
 
 class EnergyAutomation():
     def __init__(self):
+        self.automate()
+        self.get_data()
+    def automate(self):
         browser = webdriver.Chrome()
         browser.get("https://osos.akdenizedas.com.tr/osos/login.iface")
         enter_user = browser.find_element_by_id("frmLoginPanel:inpUser")
@@ -15,8 +18,15 @@ class EnergyAutomation():
         enter_pswrd.send_keys("maverick1")
         enter_btn.click()
         time.sleep(100)
+    def get_data(self):
         page=requests.get(browser.current_url)
         soup=BeautifulSoup(page.content,"html.parser")
         data = soup.find_all("table", {"class": "chart full-width"})
         browser.close()
+    def graph(self):
+        pass
+    def notify(self):
+        pass
+
+    
 energy_aut = EnergyAutomation()
