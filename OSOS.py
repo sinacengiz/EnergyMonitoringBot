@@ -1,6 +1,9 @@
 from selenium import webdriver
-from bs4 import _soup
+from bs4 import BeautifulSoup
+import requests
 import time
+#import jenkins tools
+
 class EnergyAutomation():
     def __init__(self):
         browser = webdriver.Chrome()
@@ -12,5 +15,7 @@ class EnergyAutomation():
         enter_pswrd.send_keys("maverick1")
         enter_btn.click()
         time.sleep(100)
+        page=requests.get("https://.......")
+        soup=BeautifulSoup(page.content"html.parser")
         browser.close()
 energy_aut = EnergyAutomation()
