@@ -27,6 +27,6 @@ class EnergyAutomation():
         pass
     def notify(self):
         pass
-
+    #use whatsapp API to notify
     
 energy_aut = EnergyAutomation()
