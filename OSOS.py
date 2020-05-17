@@ -1,6 +1,8 @@
+
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
+import time
 import time
 #import jenkins tools
 
@@ -11,15 +13,18 @@ class EnergyAutomation():
     def automate(self):
         browser = webdriver.Chrome()
         browser.get("https://osos.akdenizedas.com.tr/osos/login.iface")
+        browser.maximize_window()
         enter_user = browser.find_element_by_id("frmLoginPanel:inpUser")
         enter_pswrd = browser.find_element_by_id("frmLoginPanel:inpPass")
         enter_btn = browser.find_element_by_id("frmLoginPanel:cmdBtnValidate")
         enter_user.send_keys("2687521000")
         enter_pswrd.send_keys("Aa.010420")
         enter_btn.click()
-        time.sleep(10)
-        click_btn=browser.find_element_by_class_name("iceDatTblCol2")
+        time.sleep(15)
+        click_btn=browser.find_element_by_id("frmCounters:counterList:0:j_id101-0-0")
         click_btn.click()
+        startdate=browser.find_element_by_name("ffrmCounterProfilestxtStartDate1")
+        startdate.click()
         time.sleep(1000)
     def get_data(self):
         self.page=requestgits.get(browser.current_url)
