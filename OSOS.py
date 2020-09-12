@@ -11,7 +11,7 @@ class EnergyAutomation():
         self.automate()
         self.get_data()
     def automate(self):
-        browser = webdriver.Chrome()
+        browser = webdriver.Chrome("C:/Users/User/Desktop/chromedriver.exe")
         browser.get("https://osos.akdenizedas.com.tr/osos/login.iface")
         browser.maximize_window()
         enter_user = browser.find_element_by_id("frmLoginPanel:inpUser")
